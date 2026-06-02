@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORL</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:white;
+    color:black;
+}
+
+header{
+    text-align:center;
+    padding:30px;
+    border-bottom:2px solid black;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.home{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:40px;
+}
+
+.btn{
+    width:220px;
+    height:120px;
+    border:2px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.page{
+    display:none;
+}
+
+.active{
+    display:block;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    box-sizing:border-box;
+}
+
+.article{
+    border:1px solid black;
+    padding:10px;
+    margin-top:10px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>ORL (Online Research Library)</h1>
+</header>
+
+<div class="container">
+
+    <div id="home" class="page active">
+        <div class="home">
+            <div class="btn" onclick="showPage('write')">
+                글쓰기
+            </div>
+
+            <div class="btn" onclick="showPage('search')">
+                검색하기
+            </div>
+        </div>
+    </div>
+
+    <div id="write" class="page">
+        <button onclick="showPage('home')">홈으로</button>
+
+        <h2>글쓰기</h2>
+
+        <input placeholder="제목">
+
+        <input placeholder="작성자">
+
+        <textarea rows="10" placeholder="연구 내용을 입력하세요"></textarea>
+
+        <button>저장 (시제품)</button>
+    </div>
+
+    <div id="search" class="page">
+
+        <button onclick="showPage('home')">홈으로</button>
+
+        <h2>검색</h2>
+
+        <input placeholder="검색어 입력">
+
+        <div class="article" onclick="showPage('article')">
+            우박수 추측 탐구
+        </div>
+
+        <div class="article" onclick="showPage('article')">
+            소수의 성질 연구
+        </div>
+
+    </div>
+
+    <div id="article" class="page">
+
+        <button onclick="showPage('search')">뒤로가기</button>
+
+        <h2>우박수 추측 탐구</h2>
+
+        <p>작성자: 홍길동</p>
+
+        <p>작성시간: 2026-06-01</p>
+
+        <hr>
+
+        <p>
+            이 영역은 연구글 본문이 표시되는 공간입니다.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+function showPage(id){
+
+    document.querySelectorAll('.page').forEach(function(page){
+        page.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
