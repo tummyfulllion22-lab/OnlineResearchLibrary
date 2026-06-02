@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -75,67 +76,67 @@ input, textarea{
 
 <div class="container">
 
-    <div id="home" class="page active">
-        <div class="home">
-            <div class="btn" onclick="showPage('write')">
-                글쓰기
-            </div>
+```
+<div id="home" class="page active">
 
-            <div class="btn" onclick="showPage('search')">
-                검색하기
-            </div>
-        </div>
-    </div>
+    <div class="home">
 
-    <div id="write" class="page">
-        <button onclick="showPage('home')">홈으로</button>
-
-        <h2>글쓰기</h2>
-
-        <input placeholder="제목">
-
-        <input placeholder="작성자">
-
-        <textarea rows="10" placeholder="연구 내용을 입력하세요"></textarea>
-
-        <button>저장 (시제품)</button>
-    </div>
-
-    <div id="search" class="page">
-
-        <button onclick="showPage('home')">홈으로</button>
-
-        <h2>검색</h2>
-
-        <input placeholder="검색어 입력">
-
-        <div class="article" onclick="showPage('article')">
-            우박수 추측 탐구
+        <div class="btn"
+             onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSc-pyzWNAWTTKNqrLbYGiiLVgoTBLEACLYkUvgvCpmQqh34CA/viewform?usp=header','_blank')">
+            글쓰기
         </div>
 
-        <div class="article" onclick="showPage('article')">
-            소수의 성질 연구
+        <div class="btn"
+             onclick="showPage('search')">
+            검색하기
         </div>
 
     </div>
 
-    <div id="article" class="page">
+</div>
 
-        <button onclick="showPage('search')">뒤로가기</button>
+<div id="search" class="page">
 
-        <h2>우박수 추측 탐구</h2>
+    <button onclick="showPage('home')">
+        홈으로
+    </button>
 
-        <p>작성자: 홍길동</p>
+    <h2>검색</h2>
 
-        <p>작성시간: 2026-06-01</p>
+    <input placeholder="검색어 입력">
 
-        <hr>
-
-        <p>
-            이 영역은 연구글 본문이 표시되는 공간입니다.
-        </p>
-
+    <div class="article"
+         onclick="showPage('article')">
+        우박수 추측 탐구
     </div>
+
+    <div class="article"
+         onclick="showPage('article')">
+        소수의 성질 연구
+    </div>
+
+</div>
+
+<div id="article" class="page">
+
+    <button onclick="showPage('search')">
+        뒤로가기
+    </button>
+
+    <h2>우박수 추측 탐구</h2>
+
+    <p>작성자: 홍길동</p>
+
+    <p>작성시간: 2026-06-01</p>
+
+    <hr>
+
+    <p>
+        이 영역은 연구글 본문이 표시되는 공간입니다.
+    </p>
+
+</div>
+```
 
 </div>
 
