@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORL 0.1</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#fff;color:#000}
+header{text-align:center;padding:30px;border-bottom:2px solid #000}
+.container{max-width:1000px;margin:auto;padding:20px}
+.home{display:flex;justify-content:center;gap:30px;margin-top:40px}
+.btn{border:2px solid #000;width:220px;height:120px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:24px}
+.page{display:none}
+.active{display:block}
+input,textarea{width:100%;padding:8px;border:1px solid #000;margin:8px 0;box-sizing:border-box}
+.article{border:1px solid #000;padding:15px;margin-top:15px;cursor:pointer}
+.back{margin-bottom:15px}
+</style>
+</head>
+<body>
+<header><h1>ORL (Online Research Library)</h1></header>
+<div class="container">
+
+<div id="home" class="page active">
+<div class="home">
+<div class="btn" onclick="showPage('write')">글쓰기</div>
+<div class="btn" onclick="showPage('search')">검색하기</div>
+</div>
+</div>
+
+<div id="write" class="page">
+<button class="back" onclick="showPage('home')">← 홈</button>
+<h2>글쓰기</h2>
+<label>제목</label>
+<input placeholder="제목 입력">
+<label>작성자</label>
+<input placeholder="작성자 입력">
+<label>본문</label>
+<textarea rows="10" placeholder="연구 내용을 입력"></textarea>
+<label>첨부파일</label>
+<input type="file">
+<button>저장(시제품)</button>
+</div>
+
+<div id="search" class="page">
+<button class="back" onclick="showPage('home')">← 홈</button>
+<h2>검색</h2>
+<input placeholder="검색어 입력">
+<div class="article" onclick="showPage('article')">우박수 추측 탐구</div>
+<div class="article" onclick="showPage('article')">소수의 성질 연구</div>
+</div>
+
+<div id="article" class="page">
+<button class="back" onclick="showPage('search')">← 검색 결과</button>
+<h2>우박수 추측 탐구</h2>
+<p><strong>작성자:</strong> 홍길동</p>
+<p><strong>작성시간:</strong> 2026-06-01</p>
+<hr>
+<p>이 영역은 연구글 본문이 표시되는 공간입니다.</p>
+<hr>
+<p><strong>첨부파일:</strong> report.pdf</p>
+</div>
+
+</div>
+
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+</html>
